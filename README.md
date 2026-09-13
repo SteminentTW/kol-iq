@@ -16,7 +16,8 @@ A public, source-cited database of clinicians and researchers working on spinoce
 - 17 個機構（醫學中心與學術機構）
 - 12 件在台灣有站點的相關試驗
 - 45 筆附日期與來源的研究與生態系動態
-- 每筆資料附可查證的來源連結，中英雙語
+- 每筆資料附可查證的來源連結
+- 介面可切換中英文；多數內容附英文版，但研究與動態時間線有過半條目（多為論文）只有中文，部分來源連結名稱與試驗主持人角色也還是中文，切到英文時會顯示中文原文
 
 姊妹站：[SCA-IQ](https://richlovegod.github.io/sca-iq/)（競品情報）、[MSA-IQ](https://richlovegod.github.io/msa-iq/)（多系統萎縮症）。
 
@@ -48,18 +49,18 @@ data/institutions.json
 data/trials.json
 data/updates.json     # 研究與動態時間線
 data/orgs.json        # 學會、病友組織、資源
-data/events.json      # 活動行事曆
+data/events.json      # 活動行事曆（跨多天的活動加 end＝最後一天）
 data/legacy.json      # 紀念頁
 data/versions.json    # 版本更新紀錄
 data/meta.json        # 資料截止日
 ```
 
-新增資料只要改 JSON，不用動 HTML。**每筆新資料都要中英雙寫**（缺英文會自動回退中文，但會顯得沒做完）。
+新增人物、機構、試驗、動態、組織、活動只要改 JSON，不用動 HTML；已知缺口、研究群集定義、論文數與頁首的版號和涵蓋範圍則寫在 `index.html` 裡。**每筆新資料都要中英雙寫**（缺英文會自動回退中文，但會顯得沒做完）。
 
 ## 本機預覽
 
 ```bash
-python -m http.server 8902 --directory .
+python -m http.server 8901 --directory .
 ```
 
 直接雙擊 `index.html` 會空白 — 瀏覽器會擋 `file://` 的 fetch。

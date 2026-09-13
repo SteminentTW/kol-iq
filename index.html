@@ -650,9 +650,11 @@ function renderOrgs(){
       '<div class="onote">'+esc(L(o,'note'))+'</div>'+
       '<div style="margin-top:9px">'+srcRow([{label:LANG==='en'?'Official site':'官方網站',url:o.url}])+'</div></div>';
   }).join('');
-  var today=(META.lastScan||'2026-08-15');
+  /* 用瀏覽者本地時區的當天日期判斷活動是否已過；lastScan 只代表資料截止，不要拿來當今天（toISOString 是 UTC，會跨日）
+     跨多天的活動在 events.json 填 end（最後一天），辦完隔天才算已過 */
+  var now=new Date(),today=now.getFullYear()+'-'+('0'+(now.getMonth()+1)).slice(-2)+'-'+('0'+now.getDate()).slice(-2);
   q('eList').innerHTML=EVENTS.slice().sort(function(a,b){return a.date.localeCompare(b.date);}).map(function(e){
-    var past=e.date<today;
+    var past=(e.end||e.date)<today;
     return '<div class="ev'+(past?' past':'')+'"><div class="ed">'+esc(e.date)+(past?'':('　'+esc(T('upcoming'))))+'</div>'+
       '<div class="en2">'+esc(L(e,'name'))+(L(e,'place')?('<span style="font-weight:400;color:#8b9bb0;font-size:11.5px">　'+esc(L(e,'place'))+'</span>'):'')+'</div>'+
       '<div class="em">'+esc(L(e,'note'))+'</div>'+
