@@ -2,7 +2,7 @@
 
 脊髓小腦運動失調症（SCA）領域的醫師與研究者資料庫 — 台灣版。
 
-**線上版**：https://richlovegod.github.io/kol-iq/
+**線上版**：https://steminenttw.github.io/kol-iq/
 
 A public, source-cited database of clinicians and researchers working on spinocerebellar ataxia — Taiwan edition.
 
