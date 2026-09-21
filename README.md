@@ -19,7 +19,7 @@ A public, source-cited database of clinicians and researchers working on spinoce
 - 每筆資料附可查證的來源連結
 - 介面可切換中英文；多數內容附英文版，但研究與動態時間線有過半條目（多為論文）只有中文，部分來源連結名稱與試驗主持人角色也還是中文，切到英文時會顯示中文原文
 
-姊妹站：[SCA-IQ](https://richlovegod.github.io/sca-iq/)（競品情報）、[MSA-IQ](https://richlovegod.github.io/msa-iq/)（多系統萎縮症）。
+姊妹站：[SCA-IQ](https://steminenttw.github.io/sca-iq/)（競品情報）、[MSA-IQ](https://steminenttw.github.io/msa-iq/)（多系統萎縮症）。
 
 ## 資料怎麼來的
 
